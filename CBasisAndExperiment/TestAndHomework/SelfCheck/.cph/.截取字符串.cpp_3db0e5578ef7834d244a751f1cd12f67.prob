@@ -1,0 +1,1 @@
+{"name":"Local: 截取字符串","url":"c:\\Users\\13967\\Desktop\\cpp\\pintia\\selfcheck\\截取字符串.cpp","tests":[{"id":1705565794277,"input":"abc123ABC456\n2  5","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\13967\\Desktop\\cpp\\pintia\\selfcheck\\截取字符串.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: 顺序表操作集","url":"d:\\Project\\coding\\cpp\\DataStructure\\Experiment4\\顺序表操作集.c","tests":[{"id":1711674071799,"input":"5\n1 2 3 4 5\n1\n1\n1\n1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Project\\coding\\cpp\\DataStructure\\Experiment4\\顺序表操作集.c","group":"local","local":true}

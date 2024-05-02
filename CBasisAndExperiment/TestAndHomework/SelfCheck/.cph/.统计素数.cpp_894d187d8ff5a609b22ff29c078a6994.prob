@@ -1,0 +1,1 @@
+{"name":"Local: 统计素数","url":"c:\\Users\\13967\\Desktop\\cpp\\pintia\\selfcheck\\统计素数.cpp","tests":[{"id":1705565153042,"input":"9\n1 2 3 5 7 17 23 27 33","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\13967\\Desktop\\cpp\\pintia\\selfcheck\\统计素数.cpp","group":"local","local":true}
