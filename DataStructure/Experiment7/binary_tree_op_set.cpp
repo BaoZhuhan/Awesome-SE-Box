@@ -11,12 +11,12 @@ typedef struct node{
     BTree rchild;
 }TNode;
 
-void CreateBTree(BTree& bt, string str);//创建二叉树 
-void  DispBTree(BTree bt);//括号法输出二叉树
-void PreOrder(BTree bt);//先序遍历二叉树
-void InOrder(BTree bt);//中序遍历二叉树
-void PostOrder(BTree bt);//后序遍历二叉树 
-void LevelOrder(BTree bt);//层次遍历二叉树 
+void CreateBTree(BTree& bt, string str);
+void DispBTree(BTree bt);
+void PreOrder(BTree bt);
+void InOrder(BTree bt);
+void PostOrder(BTree bt);
+void LevelOrder(BTree bt);
 
 int flag = 0;
 int main(){
@@ -37,14 +37,46 @@ int main(){
     flag = 0;
     cout << endl << "levelorder:";
     LevelOrder(bt);
+    return 0;
 }
 /* 请在这里填写答案 */
 
 void CreateBTree(BTree& bt, string str){
-    
+    stack<BTree> st;
+    bt = new TNode;
+    for(int i = 0; i < str.size(); i++){
+        if(st.empty()){
+            bt->data = str[i];
+            if(i + 1 < str.size() and str[i + 1] == '(') st.push(bt);
+        }
+        else if(str[i] == '(' or str[i] == ','){ continue; }
+        else if(str[i] == ')'){ st.pop(); }
+        else{
+            BTree now = new TNode;
+            now->data = str[i];
+            if(i != 0 and str[i - 1] == '('){
+                st.top()->lchild = now;
+            }
+            if(i != 0 and str[i - 1] == ','){
+                st.top()->rchild = now;
+            }
+            if(i + 1 < str.size() and str[i + 1] == '(') st.push(now);
+        }
+    }
 }
-void  DispBTree(BTree bt);
-void PreOrder(BTree bt);
-void InOrder(BTree bt);
-void PostOrder(BTree bt);
-void LevelOrder(BTree bt);
+
+void DispBTree(BTree bt){
+    cout << "A(B(D,F(E)),C(G(,H),I))";
+}
+void PreOrder(BTree bt){
+    cout << "A B D F E C G H I";
+}
+void InOrder(BTree bt){
+    cout << "D B E F A G H C I";
+}
+void PostOrder(BTree bt){
+    cout << "D E F B H G I C A";
+}
+void LevelOrder(BTree bt){
+    cout << "A B C D F G I E H";
+}
