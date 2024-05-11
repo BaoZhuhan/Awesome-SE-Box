@@ -39,11 +39,12 @@ int main(){
     LevelOrder(bt);
     return 0;
 }
-/* 请在这里填写答案 */
 
 void CreateBTree(BTree& bt, string str){
     stack<BTree> st;
     bt = new TNode;
+    bt->lchild = nullptr;
+    bt->rchild = nullptr;
     for(int i = 0; i < str.size(); i++){
         if(st.empty()){
             bt->data = str[i];
@@ -54,6 +55,8 @@ void CreateBTree(BTree& bt, string str){
         else{
             BTree now = new TNode;
             now->data = str[i];
+            now->lchild = nullptr;
+            now->rchild = nullptr;
             if(i != 0 and str[i - 1] == '('){
                 st.top()->lchild = now;
             }
@@ -66,17 +69,73 @@ void CreateBTree(BTree& bt, string str){
 }
 
 void DispBTree(BTree bt){
-    cout << "A(B(D,F(E)),C(G(,H),I))";
+    if(bt == NULL){ return; }
+    cout << bt->data;
+    if(bt->lchild != nullptr or bt->rchild != nullptr){
+        cout << "(";
+    }
+    DispBTree(bt->lchild);
+    if(bt->rchild != nullptr){
+        cout << ",";
+        DispBTree(bt->rchild);
+    }
+    if(bt->lchild != nullptr or bt->rchild != nullptr){
+        cout << ")";
+    }
+    return;
 }
+
+//以下所有函数的static int cot是为了控制第一个字符前面空格不输出
 void PreOrder(BTree bt){
-    cout << "A B D F E C G H I";
+    static int cot = 0;
+    if(bt == nullptr){ return; }
+
+    cot++;
+    if(cot == 1) cout << bt->data;
+    else cout << " " << bt->data;
+    PreOrder(bt->lchild);
+    PreOrder(bt->rchild);
+    return;
 }
 void InOrder(BTree bt){
-    cout << "D B E F A G H C I";
+    //cout << "D B E F A G H C I";
+    static int cot = 0;
+    if(bt == nullptr) return;
+
+    InOrder(bt->lchild);
+    cot++;
+    if(cot == 1) cout << bt->data;
+    else cout << " " << bt->data;
+    InOrder(bt->rchild);
+    return;
 }
 void PostOrder(BTree bt){
-    cout << "D E F B H G I C A";
+    //cout << "D E F B H G I C A";
+    static int cot = 0;
+    if(bt == nullptr) return;
+
+    PostOrder(bt->lchild);
+    PostOrder(bt->rchild);
+    cot++;
+    if(cot == 1) cout << bt->data;
+    else cout << " " << bt->data;
 }
 void LevelOrder(BTree bt){
-    cout << "A B C D F G I E H";
+    //cout << "A B C D F G I E H";
+    queue<BTree> q;
+    string res;
+    BTree now = bt;
+    q.push(now);
+    while(!q.empty()){
+        static int cot = 0;
+        now = q.front();
+        q.pop();
+        cot++;
+        if(cot != 1) res += " ";
+        res += now->data;
+        if(now->lchild != nullptr) q.push(now->lchild);
+        if(now->rchild != nullptr) q.push(now->rchild);
+    }
+    
+    cout << res;
 }
