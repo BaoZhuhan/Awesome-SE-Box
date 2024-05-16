@@ -48,3 +48,7 @@ struct node* findMin(struct node* BST){
     }
     return BST;
 }
+
+struct node* insert(struct node* BST , int x){
+    
+}
