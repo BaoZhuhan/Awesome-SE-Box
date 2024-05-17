@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+#history
+.history
+
+#vscode
+.vscode
