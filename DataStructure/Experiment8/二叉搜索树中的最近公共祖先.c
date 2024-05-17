@@ -27,3 +27,7 @@ int main()
 }
 
 /* 你的代码将被嵌在这里 */
+
+int LCA( Tree T,  int u, int v ){
+    
+}
