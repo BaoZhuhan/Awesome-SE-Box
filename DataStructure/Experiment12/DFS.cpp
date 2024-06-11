@@ -38,14 +38,55 @@ int main(){
 }
 
 /* 请在这里填写答案 */
-void hack(ALGraph G){
-    printf("\nhack-->\n");
-    printf("node num-->%d\nedge num-->%d",);
+typedef struct node_stack{
+    int data;
+    struct node_stack* next;
+}stack;
+
+stack* InitStack(){
+    stack* S;
+    S = (stack*)malloc(sizeof(stack));
+    S->data = -1;
+    S->next = nullptr;
+    return S;
 }
+
+stack* Push(stack* old, int data){
+    stack* S;
+    S = (stack*)malloc(sizeof(stack));
+    S->data = data;
+    S->next = old;
+    return S;
+}
+
+stack* Pop(stack* S){
+    S = S->next;
+    return S;
+}
+
 void DFS(ALGraph G, int v){
-    static int n = 1;
-    if(n == 1){
-        hack(G);
+    stack* S = InitStack();
+    S = Push(S, v);
+    visited[v] = 1;
+    while(S->next != nullptr){
+        int now = S->data;
+        S = Pop(S);
+        printf("%c ", G.vertices[now].data);
+        for(ArcNode* p = G.vertices[now].firstarc; p; p = p->nextarc){
+            int w = p->adjvex;
+            if(!visited[w]){
+                S = Push(S, w);
+                visited[w] = 1;
+            }
+        }
     }
-    n++;
+}
+
+void DFS(ALGraph G, int v){
+    ArcNode* p;
+    visited[v] = 1;
+    printf("%c ", G.vertices[v].data);
+    for(p = G.vertices[v].firstarc; p; p = p->nextarc){
+        if(!visited[p->adjvex]) DFS(G, p->adjvex);
+    }
 }

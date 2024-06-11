@@ -47,7 +47,7 @@ int front(queue* Q){
 void BFS(Graph G, int V){
     queue* Q;
     Q = (queue*)malloc(sizeof(queue));
-    Q->size = MVNum+1;
+    Q->size = MVNum + 1;
     Q->data = (int*)malloc(Q->size * (sizeof(int)));
     Q->start = Q->end = 0;
 
@@ -61,6 +61,28 @@ void BFS(Graph G, int V){
             if(G.arcs[now][i] == 1 and visited[i] == 0){
                 push(Q, i);
                 visited[i] = 1;
+            }
+        }
+    }
+}
+
+void BFS(Graph G, int V){
+    int queue[MVNum], front = 0, rear = 0, now;
+
+    printf("%c ", G.vexs[V]);
+    visited[V] = 1;
+    rear = (rear + 1) % MVNum;
+    queue[rear] = V;
+
+    while(front != rear){
+        front = (front + 1) % MVNum;
+        now = queue[front];
+        for(int i = 0; i < G.vexnum; i++){
+            if(G.arcs[now][i] != 0 and visited[i] == 0){
+                printf("%c ", G.vexs[i]);
+                visited[i] = 1;
+                rear = (rear + 1) % MVNum;
+                queue[rear] = i;
             }
         }
     }
