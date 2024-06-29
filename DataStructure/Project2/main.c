@@ -74,7 +74,6 @@ void printInfix(TreeNode* root, int isRoot){
     else{
         printf("%s", root->val);
     }
-
     printInfix(root->right, 0); // 打印右子树
 
     // 如果不是根节点且不是叶子节点，打印右括号
@@ -108,6 +107,15 @@ void splitInput(char* input, char* output[], int* size){
     }
 }
 
+int isCorrectExp(char* inorder[], int inSize){
+    int flag = 1;
+    for(int i = 0; i < inSize - 1;i++){
+        if(i == 0 && !strchr("+-*/", inorder[i][0]) && inSize > 1 && !strchr("+-*/", inorder[1])){ flag = 0; }
+        else if(!strchr("+-*/", inorder[i][0]) && (!strchr("+-*/", inorder[i + 1][0]) || !strchr("+-*/", inorder[i - 1][0]))){ flag = 0; }
+    }
+    return flag;
+}
+
 int main(){
     char preInput[256]; // 存储前序输入字符串
     char inInput[256]; // 存储中序输入字符串
@@ -134,6 +142,11 @@ int main(){
 
     if(!validateTraversal(preorder, preSize, inorder, inSize)){ // 验证前序和中序遍历元素是否一致
         printf("Inconsistent pre-order elements and in-order elements.\n");
+        return 0;
+    }
+
+    if(!isCorrectExp(inorder, inSize)){
+        printf("This binary tree is not exists.\n"); // 验证表达式逻辑正确性
         return 0;
     }
 
