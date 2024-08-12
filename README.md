@@ -42,18 +42,19 @@ Educational Purpose: This repository aims to provide a reference to help others 
 
 Root:
 
---[CBasisAndExperiment](./CBasisAndExperiment/) ................【A01025】程序设计基础与实验  
+--[CBasisAndExperiment](./CBasisAndExperiment/) .....................【A01025】程序设计基础与实验
 
-----[ClassroomTeaching](./CBasisAndExperiment/ClassroomTeaching/) 部分课上样例代码  
-----[PintiaExperiment](./CBasisAndExperiment/PintiaExperiment/) 主要的课后作业，拼题A上面的实验  
-----[TestAndHomework](./CBasisAndExperiment/TestAndHomework/) 测试和大作业  
-----[FinalTestReview](./CBasisAndExperiment/FinalTestReview/) 期末自我复习代码  
+------[ClassroomTeaching](./CBasisAndExperiment/ClassroomTeaching/) .....................部分课上样例代码
+------[PintiaExperiment](./CBasisAndExperiment/PintiaExperiment/) .........................主要的课后作业，拼题A上面的实验
+------[TestAndHomework](./CBasisAndExperiment/TestAndHomework/) .....................测试和大作业
+------[FinalTestReview](./CBasisAndExperiment/FinalTestReview/) ............................期末自我复习代码
 
---[DataStructure](./DataStructure/) 【301306】数据结构基础    
+--[DataStructure](./DataStructure/) ...................................【301306】数据结构基础
 
-----[class](./DataStructure/class/) 部分课上样例代码    
-----[Stack](./DataStructure/Stack/) 技术栈    
-----ExperimentXXX 拼题A上面的实验  
+------[class](./DataStructure/class/) ................................................部分课上样例代码
+------[Stack](./DataStructure/Stack/) ...............................................技术栈
+------ExperimentXXX ...........................拼题A上面的实验  
+
 
 ### 课程心得
 
