@@ -2,8 +2,8 @@
 
 ### 介绍：
 
-这个库用于存放我软件工程专业课的课后作业。
-A repository to store my homework of CS subject(Hangzhou City Unv , Software Engineering)
+👨‍🎓 浙大城市学院软件工程本科生课程资料、笔记、回忆和整理的期末考试卷及课程作业。希望对你有所帮助❤️，如果喜欢记得给个Star🌟    
+🎓 Final exam papers and coursework for software engineering undergraduate students in HZCU course materials, notes, recollections and collation. I hope it helps ❤️ you, and if you like it, remember to give a Star🌟  
 
 ---
 
