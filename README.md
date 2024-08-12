@@ -2,7 +2,7 @@
 
 ### 介绍：
 
-[这个库](https://github.com/BaoZhuhan/CS_Class_Homework)用于存放[我](https://github.com/BaoZhuhan)的计算机类课程的课后作业。
+[这个库](https://github.com/BaoZhuhan/CS_Class_Homework)用于存放[我](https://github.com/BaoZhuhan)的计算机类课程的课后作业。  
 A [repository](https://github.com/BaoZhuhan/CS_Class_Homework) to store [my](https://github.com/BaoZhuhan) homework of CS subject(Hangzhou City Unv , Software Engineering)
 
 ---
