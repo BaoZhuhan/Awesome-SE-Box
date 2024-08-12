@@ -28,7 +28,8 @@ Open Source License: This repository is an open-source project and follows the M
 Educational Purpose: This repository aims to provide a reference to help others gain an initial understanding of the coursework and assignments of a computer science student over four years of university study. Through sharing this repository, I hope to offer useful references and insights to learners.  
 
 ---
-- [x] 在使用、复制、修改和分发本储存库的代码前，我已经认真阅读上述声明，了解自身行为潜在的学术道德风险与作者无关。
+- [x] 在使用、复制、修改和分发本储存库的代码前，我已经认真阅读上述声明，了解自身行为潜在的学术道德风险与作者无关。  
+- [x] I have carefully read the above statement before using, copying, modifying, and distributing the code of this repository, and understand that the potential academic and ethical risks of my actions are not related to the author.
 
 ### 目前拥有的课程列表
 
