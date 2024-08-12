@@ -1,8 +1,8 @@
-# CS_Class_Homework
+# HZCU-SoftwareEngineer-Homework
 
 ### 介绍：
 
-这个库用于存放我的计算机类课程的课后作业。  
+这个库用于存放我软件工程专业课的课后作业。  
 A repository to store my homework of CS subject(Hangzhou City Unv , Software Engineering)
 
 ---
