@@ -35,8 +35,8 @@ Educational Purpose: This repository aims to provide a reference to help others 
 
 | 课程名称                     | 主要语言                  | 备注                                                                                                                                                            |
 | :--------------------------- | ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 【A01025】程序设计基础与实验 | C[GCC](https://gcc.gnu.org/) | 课程链接:[程序设计入门-C语言](https://www.icourse163.org/course/ZJU-199001) |
-| 【301306】数据结构基础       | C[GCC](https://gcc.gnu.org/) | 课程链接: [数据结构](https://www.icourse163.org/course/ZJU-93001) |
+| 【A01025】程序设计基础与实验 | [C](https://gcc.gnu.org/) | 课程链接:[程序设计入门-C语言](https://www.icourse163.org/course/ZJU-199001) |
+| 【301306】数据结构基础       | [C](https://gcc.gnu.org/) | 课程链接: [数据结构](https://www.icourse163.org/course/ZJU-93001) |
 
 ### 文件架构说明
 
