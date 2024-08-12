@@ -1,9 +1,17 @@
 # HZCU-SoftwareEngineer-MagicBox
 
-### 介绍：
+### 介绍 | Introduction  
 
 👨‍🎓 浙大城市学院软件工程本科生课程资料、笔记、回忆和整理的期末考试卷及课程作业。希望对你有所帮助❤️，如果喜欢记得给个Star🌟    
 🎓 Final exam papers and coursework for software engineering undergraduate students in HZCU course materials, notes, recollections and collation. I hope it helps ❤️ you, and if you like it, remember to give a Star🌟  
+
+### 如何使用 | How to use 
+
+📖我需要查看对应的课程资料？ 查看[文件架构](#文件架构说明)，点击超链接访问对应的课程！ 
+
+📓我需要查看对课程的评论？ 查看[课程评论](#课程心得)！  
+
+❗我该如何避免学术风险？ 认真阅读重要声明⬇️  
 
 ---
 
