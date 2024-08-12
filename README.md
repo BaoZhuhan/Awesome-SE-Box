@@ -2,8 +2,8 @@
 
 ### 介绍：
 
-[这个库](https://github.com/BaoZhuhan/CS_Class_Homework)用于存放[我](https://github.com/BaoZhuhan)的计算机类课程的课后作业。  
-A [repository](https://github.com/BaoZhuhan/CS_Class_Homework) to store [my](https://github.com/BaoZhuhan) homework of CS subject(Hangzhou City Unv , Software Engineering)
+这个库用于存放我的计算机类课程的课后作业。  
+A repository to store my homework of CS subject(Hangzhou City Unv , Software Engineering)
 
 ---
 
@@ -28,6 +28,7 @@ Open Source License: This repository is an open-source project and follows the M
 Educational Purpose: This repository aims to provide a reference to help others gain an initial understanding of the coursework and assignments of a computer science student over four years of university study. Through sharing this repository, I hope to offer useful references and insights to learners.  
 
 ---
+- [x] 在使用、复制、修改和分发本储存库的代码前，我已经认真阅读上述声明，了解自身行为潜在的学术道德风险与作者无关。
 
 ### 目前拥有的课程列表
 
