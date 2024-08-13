@@ -1,7 +1,5 @@
 # HZCU-SoftwareEngineer-MagicBox
 
-**访问GitHub获取仓库源地址[HZCU-SoftwareEngineer-MagicBox](https://github.com/BaoZhuhan/HZCU-SoftwareEngineer-MagicBox)**
-
 选择语言：[English](./README_en.md)
 
 ### 介绍 
