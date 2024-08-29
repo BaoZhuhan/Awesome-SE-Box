@@ -1,14 +1,20 @@
-dict1 = {'小明': '13299887777', '特朗普': '814666888', '普京': '522888666', '吴京': '13999887777'}
+try:
+    def main():
+        a = float(input())
+        f = input()
+        b = float(input())
+        res = 0
+        
+        if f == "+" :
+            res = a + b
+        elif f == "-" :
+            res = a - b
+        elif f == "*" :
+            res = a * b
+        elif f == "/" :
+            res = a / b
 
-name = input()
-phone = input()
-
-try :
-    dict1[name]
-    dict1[name] = phone
+        print("{:.2f}".format(res))
+    main()
 except :
-    print("数据不存在")
-
-for i in dict1.keys():
-    print(i,end = ":")
-    print(dict1[i])
+    print("divided by zero")
