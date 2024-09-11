@@ -1,0 +1,14 @@
+button {
+    font-family: "微软雅黑";
+    color: hsl(200, 50%, 50%);
+    font-size: 1.1rem;
+    border-style: none;
+}
+
+section {
+    display: flex;
+    justify-items: center;
+    flex-flow: column;
+    width: 400px;
+    border: 1px solid hsl(200, 50%, 50%);
+}
