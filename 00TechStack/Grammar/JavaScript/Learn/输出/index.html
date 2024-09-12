@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>My first page</h1>
+    <p id="demo">my first paragraph</p>
+    <button onclick="myFunction(1,2)">click me</button>
+
+    <script>
+        document.getElementById("demo").innerHTML = "paragraph has been changed.";
+
+        function myFunction(a,b) {
+            for(var i = 0 ; i < 5 ; i++){
+                a = a + i ;
+                b = b + i ;
+            }
+            console.log(a+b);
+        }
+    </script>
+</body>
+
+</html>
