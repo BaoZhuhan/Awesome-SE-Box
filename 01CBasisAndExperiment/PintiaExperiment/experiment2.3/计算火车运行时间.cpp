@@ -1,25 +1,15 @@
 #include <stdio.h>
 
-int main(void){
-    int a,b,c,d,e,f,g,h,i,hh,mm;
-    scanf("%d %d",&a,&b);
-    c = (a-a%100)/100;
-    d = (a%100);
-    e = (b - b%100)/100;
-    f = (b %100);
-    g = 60*c+d;
-    h = 60*e+f;
-    i =h-g;
-    hh = i/60;
-    mm = i%60;
-    if(hh>10 && mm>10 )
-        printf("%d:%d",hh,mm);
-    else if(hh<10 && mm>10 )
-        printf("0%d:%d",hh,mm);
-    else if(hh>10 && mm<10)
-        printf("%d:0%d",hh,mm);
-    else
-        printf("0%d:0%d",hh,mm);
+int main(){
+    int a, b;
+    scanf("%d%d", &a, &b);
+    
+    int t1 = (a/100)*60 + a%100;
+    int t2 = (b/100)*60 + b%100;
+
+    int res = t2 - t1;
+
+    printf("%02d:%02d",(res/60),(res%60));
+
     return 0;
 }
-
