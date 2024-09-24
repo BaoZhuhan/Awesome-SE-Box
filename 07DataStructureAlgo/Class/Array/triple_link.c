@@ -44,3 +44,45 @@ void createSMatrix(LMartix* M){
     M->tu = k;
     return;
 }
+
+void AddSMatrix(LMartix M1, LMartix M2, LMartix* M){
+    int k = 0;
+    TripleNode* p1, * p2, * p, * newptr;
+    for(int i = 0; i <= MAXRC; i++){
+        M->rhead[i] = NULL;
+    }
+    M->mu = M1.mu;
+    M->nu = M1.nu;
+    M->tu = 0;
+    if(M1.tu == 0 && M2.tu == 0){ return; }
+    for(int i = 1; i <= M1.mu; i++){
+        p1 = M1.rhead[i];
+        p2 = M2.rhead[i];
+        p = NULL;
+
+        while(p1 != NULL && p2 != NULL){
+            if(p1->j < p2->j){
+                newptr = (TripleNode*)malloc(sizeof(TripleNode));
+                *newptr = *p1;
+                p1 = p1->next;
+            }
+            else if(p1->j > p2->j){
+                newptr = (TripleNode*)malloc(sizeof(TripleNode));
+                *newptr = *p2;
+                p2 = p2->next;
+            }
+            else if(p1->e + p2->e == 0){
+                p1 = p1->next;
+                p2 = p2->next;
+                continue;
+            }
+            else{
+                newptr = (TripleNode*)malloc(sizeof(TripleNode));
+                *newptr = *p1;
+                newptr->e += p2->e;
+                p1 = p1->next;
+                p2 = p2->next;
+            }
+        }
+    }
+}
