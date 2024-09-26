@@ -84,5 +84,13 @@ void AddSMatrix(LMartix M1, LMartix M2, LMartix* M){
                 p2 = p2->next;
             }
         }
+        newptr->next = NULL;
+        if(p == NULL) M->rhead[i] = newptr;
+        else p->next = newptr;
+        p = newptr;
+        k++;
+    }
+    while(p1 != NULL){
+                                    
     }
 }
