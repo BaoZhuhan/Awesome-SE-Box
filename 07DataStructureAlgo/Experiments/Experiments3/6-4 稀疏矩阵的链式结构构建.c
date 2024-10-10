@@ -124,7 +124,7 @@ ElemSet GetElem(SparseMatrix matrix, int row, int col){
         return p->u_region.term.value;
     }
 
-    return 0;  // 如果没有找到该元素，返回 0
+    return 0; 
 }
 
 
