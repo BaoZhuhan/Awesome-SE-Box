@@ -161,6 +161,27 @@ char** get_huffmancode(struct node* huffmanTree, int original[], int N) {
     return res;
 }
 
+int huffmancmp(const void *a, const void *b) {
+    // Cast the void pointers to char** and then dereference them to get the actual strings
+    const char* strA = *(const char**)a;
+    const char* strB = *(const char**)b;
+
+    // Compare by length first
+    int lenA = strlen(strA);
+    int lenB = strlen(strB);
+    
+    if (lenA == lenB) {
+        // If lengths are the same, compare by binary value (lexicographically for binary strings)
+        return strcmp(strA, strB);
+    }
+    // Otherwise, compare by length
+    return lenB - lenA;
+}
+
+int numcmp(const void *a ,const void *b){
+    return *(int*)a-*(int*)b;
+}
+
 
 /* main fun */
 char** huffmanCode(int w[], int N){
@@ -170,7 +191,9 @@ char** huffmanCode(int w[], int N){
         res[0][0] = '0' , res[0][1] = '\0';
         return res;
     }
-    
+
+    // qsort(w,N,sizeof(int),numcmp);
+
     /* init heap and turn int array into node array. */
     struct node* heap = (struct node*)malloc(N * sizeof(struct node));
     for(int i = 0; i < N; i++){
@@ -201,6 +224,7 @@ char** huffmanCode(int w[], int N){
 
     //TODO: Finish the huffman tree output
     char ** huffmanCode = get_huffmancode(huffmanTree,w,N);
+    // qsort(huffmanCode,N,sizeof(char*),huffmancmp);
     free(heap);
     free(heapSize);
     return huffmanCode;
