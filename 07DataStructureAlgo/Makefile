@@ -4,17 +4,17 @@ TARGET = run
 
 all: $(TARGET)
 
-code.o: code.h test.h
-	$(CC) $(CFLAGS) -c code.h
+$(TARGET): run.o
+	$(CC) $(CFLAGS) -o $@ $^
 
 run.o: run.c code.h test.h
-	$(CC) $(CFLAGS) -c run.c
-
-test.o: test.h
-	$(CC) $(CFLAGS) -c test.h
-
-$(TARGET): code.o run.o test.o
-	$(CC) $(CFLAGS) -o $(TARGET) code.o run.o test.o
+	$(CC) $(CFLAGS) -c $<
 
 clean:
 	rm -f *.o $(TARGET)
+
+.PHONY: do
+
+do: all
+	./$(TARGET)
+
