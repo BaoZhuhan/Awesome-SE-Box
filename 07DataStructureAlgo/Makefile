@@ -1,9 +1,20 @@
-clean :
-	rm -f run test hack PromoteDrafts.md && touch PromoteDrafts.md
-clearAllCodeFile :
-	make clean && rm -f code.c test.c run.c
-initCode :
-	make clearAllCodeFile && touch code.c 
-initFun :
-	initCode && touch run.c && touch test.c
-	
+CC = gcc
+CFLAGS = -Wall -g
+TARGET = run
+
+all: $(TARGET)
+
+code.o: code.h test.h
+	$(CC) $(CFLAGS) -c code.h
+
+run.o: run.c code.h test.h
+	$(CC) $(CFLAGS) -c run.c
+
+test.o: test.h
+	$(CC) $(CFLAGS) -c test.h
+
+$(TARGET): code.o run.o test.o
+	$(CC) $(CFLAGS) -o $(TARGET) code.o run.o test.o
+
+clean:
+	rm -f *.o $(TARGET)
