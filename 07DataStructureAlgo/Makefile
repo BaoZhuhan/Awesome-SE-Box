@@ -18,3 +18,11 @@ clean:
 do: all
 	./$(TARGET)
 
+.PHONY: del
+
+del: clean
+	> code.h
+	> run.c
+	> test.h
+	> input.txt
+
