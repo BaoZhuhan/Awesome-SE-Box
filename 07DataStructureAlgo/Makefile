@@ -1,28 +1,15 @@
-CC = gcc
-CFLAGS = -Wall -g
 TARGET = run
 
-all: $(TARGET)
+clean :
+	rm -rf *.o code run
 
-$(TARGET): run.o
-	$(CC) $(CFLAGS) -o $@ $^
-
-run.o: run.c code.h test.h
-	$(CC) $(CFLAGS) -c $<
-
-clean:
-	rm -f *.o $(TARGET)
-
-.PHONY: do
-
-do: all
+run : 
+	gcc -o -g $(TARGET) run.c
 	./$(TARGET)
 
-.PHONY: del
-
 del: clean
-	> code.h
+	> code.c
 	> run.c
-	> test.h
+	> test.c
 	> input.txt
-
+	> PromoteDrafts.md
