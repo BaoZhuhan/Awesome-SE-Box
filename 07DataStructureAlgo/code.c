@@ -1,56 +1,67 @@
-#include "test.c"
+#include <stdio.h>
+#include <stdlib.h>
 
-int calInDegree(LGraph graph, int v) {
-    int innerDegree = 0;
+int **graph;
+int N;
 
-    int *visited = (int *)calloc(graph->n_verts * sizeof(int));
+void BuildGraph() {
+    graph = (int **)calloc(N + 1, sizeof(int *));
+    for (int i = 1; i <= N; i++) {
+        graph[i] = (int *)calloc(N + 1, sizeof(int));
+    }
 
-    for (int i = 0; i < graph->n_verts; i++) {
-        Position cnt = graph->ver_list[i]->adj;
-        while (cnt != NULL) {
-            if (cnt->dest == v && visited[cnt->dest] == 0) {
-                innerDegree++;
-                printf("find innerDegree : i->%d\n", i);
-                visited[cnt->dest] = 1;
-            }
-            cnt = cnt->next;
+    int task_N = 0;
+    for (int i = 1; i <= N; i++) {
+        scanf("%d", &task_N);
+        int target = 0;
+        for (int j = 0; j < task_N; j++) {
+            scanf("%d", &target);
+            graph[target][i] = 1;
         }
     }
-    printf("calindegree-> %d, retrun %d\n", v, innerDegree);
-    free(visited);
-    return innerDegree;
+    return;
 }
 
-bool IsAcyclic(LGraph graph) {
-    int visitCot = 0;
-    int *visited = (int *)calloc(graph->n_verts * sizeof(int));
-    // Warning !
-    int dbcot = 0;
-    while (visitCot < graph->n_verts) {
-        dbcot++;
-        printf("while -->%d\n", dbcot);
+int inDegree(int index) {
+    int res = 0;
+    for (int i = 1; i <= N; i++) {
+        if (graph[i][index] == 1)
+            res++;
+    }
+    return res;
+}
+
+void cleanNode(int index) {
+    for (int i = 1; i <= N; i++) {
+        graph[index][i] = 0;
+    }
+}
+
+int topo_sort() {
+    int cot = 0;
+    int *visited = (int *)calloc(N + 1, sizeof(int));
+    while (cot != N) {
         int index = -1;
-        for (int i = 0; i < graph->n_verts; i++) {
-            if (visited[i] == 0 && calInDegree(graph, i) == 0) {
+        for (int i = 1; i <= N; i++) {
+            if (visited[i] == 0 && inDegree(i) == 0) {
                 index = i;
                 break;
             }
         }
-        printf("index-->%d\n", index);
         if (index == -1)
             break;
-
-        visitCot++;
+        cot++;
         visited[index] = 1;
-        graph->ver_list[index]->adj = NULL;
+        cleanNode(index);
     }
-
-    printf("Debug : visitCot = %d, graph->n = %d\n", visitCot, graph->n_verts);
-    for (int i = 0; i < graph->n_verts; i++) {
-        printf("%d ", visited[i]);
-    }
-    printf("\n");
-
     free(visited);
-    return visitCot != graph->n_verts;
+    return cot;
+}
+
+int main() {
+    scanf("%d", &N);
+    BuildGraph();
+    int cot = topo_sort();
+    printf("%d", (cot == N ? 1 : 0));
+    return 0;
 }
