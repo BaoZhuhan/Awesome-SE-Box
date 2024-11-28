@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node {
+    long long code;
+    int site;
+    int score;
+    int rank_in;
+    int rank_sum;
+};
+
+int cmpBysite(const void *a ,const void *b){
+    return (*(struct node*)a).site - (*(struct node*)b).site;
+}
+
+int main() {
+    struct node *list;
+    list = (struct node *)calloc(30005, sizeof(struct node));
+    int n, m, index = 0;
+    for (int i = 1; i <= n ; i++) {
+        scanf("%d", &m) ;
+        for(int j = 0 ; j < m ; j++) {
+            scanf("%lld%d", &list[index].code, &list[index].score);
+            list[index].site = i;
+            index++;
+        }
+    }
+    int size = index + 1;
+    qsort(list, (size) , sizeof(struct node), cmpBysite);
+    for(int i = 0 ; i < size ;i ++) {
+        int site = 1;
+        
+    }
+}
