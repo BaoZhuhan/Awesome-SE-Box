@@ -1,4 +1,4 @@
-#include "test.c"
+// #include "test.c"
 
 
 struct HuffmanTree* initNode(char c, int weight, struct HuffmanTree* left, struct HuffmanTree* right){

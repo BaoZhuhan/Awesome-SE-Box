@@ -1,37 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-typedef struct AVLNode* PtrToAVLNode;
-struct AVLNode{
-    int Key;
-    PtrToAVLNode Left;
-    PtrToAVLNode Right;
-    int Height;
-};
-typedef PtrToAVLNode AVLTree;
-
-AVLTree Insert(AVLTree T, int Key);
-void PostOrderPrint(AVLTree T); /* details omitted */
-void InOrderPrint(AVLTree T);   /* details omitted */
-
-int main(){
-    int N, Key, i;
-    AVLTree T = NULL;
-
-    scanf("%d", &N);
-    for(i = 0; i < N; i++){
-        scanf("%d", &Key);
-        T = Insert(T, Key);
-    }
-    PostOrderPrint(T);
-    InOrderPrint(T);
-
-    return 0;
-}
-/* Your function will be put here */
-
-typedef struct AVLNode node;
-
 /* 手写工具集 */
 int Max(int a, int b){ return a > b ? a : b; }
 int Height(AVLTree T){ return T == NULL ? 0 : T->Height; }
