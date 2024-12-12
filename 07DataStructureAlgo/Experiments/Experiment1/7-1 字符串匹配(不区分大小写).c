@@ -1,6 +1,6 @@
+#include <ctype.h>
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
 
 void toLowerCase(char *str) {
     for (int i = 0; str[i]; i++) {
@@ -20,17 +20,17 @@ void findOccurrences(char *A, char *B) {
 
 int main() {
     char A[1000], B[1000];
-    
+
     fgets(A, 1000, stdin);
     fgets(B, 1000, stdin);
-    
+
     A[strcspn(A, "\n")] = 0;
     B[strcspn(B, "\n")] = 0;
-    
+
     toLowerCase(A);
     toLowerCase(B);
-    
+
     findOccurrences(A, B);
-    
+
     return 0;
 }

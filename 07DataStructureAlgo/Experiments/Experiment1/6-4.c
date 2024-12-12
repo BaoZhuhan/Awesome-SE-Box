@@ -1,10 +1,9 @@
 #include <stdio.h>
 
 // 替换子串
-char* StrStuff(char *dst, int idx, int len, const char *src);
+char *StrStuff(char *dst, int idx, int len, const char *src);
 
-int main()
-{
+int main() {
     char a[1024], b[1024];
     int i, n;
     gets(a);
@@ -16,14 +15,16 @@ int main()
 }
 
 /* 你提交的代码将被嵌在这里 */
-char* StrInsert(char *dst, int idx, const char *src) {
-    if (idx < 0) return dst;
+char *StrInsert(char *dst, int idx, const char *src) {
+    if (idx < 0)
+        return dst;
 
     int dstlen = 0;
     for (int i = 0; dst[i] != '\0'; i++) {
         dstlen++;
     }
-    if (idx > dstlen) return dst;
+    if (idx > dstlen)
+        return dst;
 
     int srclen = 0;
     for (int i = 0; src[i] != '\0'; i++) {
@@ -41,17 +42,20 @@ char* StrInsert(char *dst, int idx, const char *src) {
     return dst;
 }
 
-char* StrRemove(char *str, int idx, int len){
-    if(idx < 0 || len <= 0 ) return str;
+char *StrRemove(char *str, int idx, int len) {
+    if (idx < 0 || len <= 0)
+        return str;
     int strlen = 0;
-    for(int i = 0 ; str[i] != '\0' ; i++){
+    for (int i = 0; str[i] != '\0'; i++) {
         strlen++;
-    } 
+    }
 
-    if(idx > strlen-1 ) return str;
-    if(idx + len > strlen-1 ) len = strlen-idx;
+    if (idx > strlen - 1)
+        return str;
+    if (idx + len > strlen - 1)
+        len = strlen - idx;
 
-    for(int i = idx; i + len < strlen; i++){
+    for (int i = idx; i + len < strlen; i++) {
         str[i] = str[i + len];
     }
     str[strlen - len] = '\0';
@@ -59,8 +63,8 @@ char* StrRemove(char *str, int idx, int len){
 }
 
 // 替换子串
-char* StrStuff(char *dst, int idx, int len, const char *src){
-    StrRemove(dst, idx , len);
-    StrInsert(dst, idx,src);
+char *StrStuff(char *dst, int idx, int len, const char *src) {
+    StrRemove(dst, idx, len);
+    StrInsert(dst, idx, src);
     return dst;
 }
