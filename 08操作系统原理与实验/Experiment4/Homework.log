@@ -1,0 +1,36 @@
+子进程ID: 135139, 父进程ID: 135138
+    PID TTY          TIME CMD
+ 134364 pts/0    00:00:00 bash
+ 135138 pts/0    00:00:00 Homework
+ 135139 pts/0    00:00:00 Homework
+ 135140 pts/0    00:00:00 sh
+ 135141 pts/0    00:00:00 ps
+子进程ID: 135139, 父进程ID: 135138
+    PID TTY          TIME CMD
+ 134364 pts/0    00:00:00 bash
+ 135138 pts/0    00:00:00 Homework
+ 135139 pts/0    00:00:00 Homework
+ 135237 pts/0    00:00:00 sh
+ 135238 pts/0    00:00:00 ps
+子进程ID: 135139, 父进程ID: 135138
+    PID TTY          TIME CMD
+ 134364 pts/0    00:00:00 bash
+ 135138 pts/0    00:00:00 Homework
+ 135139 pts/0    00:00:00 Homework
+ 135258 pts/0    00:00:00 sh
+ 135259 pts/0    00:00:00 ps
+子进程ID: 135139, 父进程ID: 135138
+    PID TTY          TIME CMD
+ 134364 pts/0    00:00:00 bash
+ 135138 pts/0    00:00:00 Homework
+ 135139 pts/0    00:00:00 Homework
+ 135370 pts/0    00:00:00 sh
+ 135371 pts/0    00:00:00 ps
+子进程ID: 135139, 父进程ID: 135138
+    PID TTY          TIME CMD
+ 134364 pts/0    00:00:00 bash
+ 135138 pts/0    00:00:00 Homework
+ 135139 pts/0    00:00:00 Homework
+ 135445 pts/0    00:00:00 sh
+ 135446 pts/0    00:00:00 ps
+子进程结束，父进程ID: 135138
